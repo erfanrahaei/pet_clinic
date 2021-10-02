@@ -1,0 +1,69 @@
+{% load static %}
+<footer class="footer">
+  <div class="footer-widgets">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="widget"> <img class="ft-logo" src="{% static 'pet_clinic/images/logof.png' %}" alt="">
+            <p>کلینیک دامپزشکی بهترین ارائه دهنده خدمات پزشکی حیوانات خانگی همچون خدمات جراحی و عقیم سازی ، خدمات واکسیناسیون ، خدمات دندانپزشکی و … با بهترین نیروهای متخصص دامپزشکی در کشور و پیشرفته ترین امکانات در زمینه دامپزشکی در خدمت هم وطنان عزیز می باشد . </p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>خدمات ما</h3>
+            <ul>
+              {% for service in services|slice:':8' %}
+              <li><a href="{% url 'service_details' service.id %}"><i class="fa fa-arrow-right"></i>
+                  {{service.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>دامپزشکان</h3>
+            <ul>
+              {% for doctor in doctors|slice:':8' %}
+              <li><a href="{% url 'doctor_details' doctor.id %}"><i class="fa fa-arrow-right"></i> {{ doctor.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="widget">
+            <h3>ارتباط با ما</h3>
+            <address>
+              <ul>
+                <li> <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>آدرس:</strong> تهران،شهرک غرب</span> </li>
+                <li> <span class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>شماره تماس:</strong> 021546987</span> </li>
+                <li> <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>انتقاد یا پیشنهاد:</strong> info@petclinic.com</span> </li>
+                <li> <span class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> <span
+                    class="add-text"><strong>تایم ها:</strong>شنبه-پنجشنبه:7:00-21:00</span> </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-cr">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="footer-social"> <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="#"><i
+                class="fa fa-facebook" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus"
+                aria-hidden="true"></i></a> <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a> <a
+              href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Pet Clinic</strong> © {% now 'Y' %}, All Rights Reserved, Design & Developed By Erfan Rahaei</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
